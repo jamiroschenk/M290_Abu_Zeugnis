@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Start</title>
+</head>
+
+<body>
+
+<header style="background-color: blue; color: white; padding: 10px;">
+    <nav>
+        <ul>
+            <li><a href="start.html">Start</a></li>
+            <li><a href="zeugnisse.html">Zeugnisse</a></li>
+            <li><a href="anderes.html">Anderes</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Start</h1>
+    <!-- Hier kommt der Inhalt der Startseite -->
+</main>
+
+<footer style="background-color: blue; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+    <p>Aktuelles Datum: <span id="currentDate"></span></p>
+    <p>BZZ Horgen</p>
+</footer>
+
+<script>
+    // JavaScript, um das aktuelle Datum anzuzeigen
+    const currentDateElement = document.getElementById('currentDate');
+    const currentDate = new Date();
+    currentDateElement.textContent = currentDate.toLocaleDateString();
+</script>
+
+</body>
+
+</html>
 
