@@ -4,26 +4,28 @@ body {
     padding: 0;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+header {
+    background-color: blue;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Optional: Füge Padding hinzu, um den Inhalt zu zentrieren */
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+.logo img {
+    height: 100%; /* Das Logo wird die volle Höhe des Headers haben */
 }
 
-header, footer {
-    text-align: center;
+.links {
+    display: flex;
 }
 
-main {
-    padding: 20px;
+.link-container {
+    margin-left: 15px; /* Optional: Füge Abstand zwischen den Links hinzu */
 }
 
-footer {
-    margin-top: 20px;
+.links a {
+    color: #fff; /* Farbe für die Links */
+    text-decoration: none; /* Entfernt die Standard-Unterstreichung der Links */
 }
-
