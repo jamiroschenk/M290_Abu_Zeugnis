@@ -235,3 +235,39 @@ select * from englisch_noten
 select * from schueler
 
 select * from marketingfachsprache_noten
+
+select * from schueler
+
+-- Beispiel für die Tabelle "abu_noten"
+SELECT
+    s.vorname,
+    s.nachname,
+    n.note AS abu_note
+FROM
+    schueler s
+        JOIN
+    abu_noten n ON s.schueler_id = n.schueler_id
+WHERE
+        s.klasse = 'ME22A';
+
+-- Noten für alle Fächer der Klasse "ME22A" auswählen
+SELECT
+    s.vorname,
+    s.nachname,
+    a.note AS abu_note,
+    sp.note AS sport_note,
+    m.note AS marketingfachsprache_note,
+    e.note AS englisch_note
+FROM
+    schueler s
+        LEFT JOIN
+    abu_noten a ON s.schueler_id = a.schueler_id
+        LEFT JOIN
+    sport_noten sp ON s.schueler_id = sp.schueler_id
+        LEFT JOIN
+    marketingfachsprache_noten m ON s.schueler_id = m.schueler_id
+        LEFT JOIN
+    englisch_noten e ON s.schueler_id = e.schueler_id
+WHERE
+        s.klasse = 'ME22A';
+
