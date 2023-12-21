@@ -1,31 +1,47 @@
-body {
+body, html {
     font-family: Arial, sans-serif;
+    height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
 }
 
-header {
-    background-color: blue;
-    height: 40px;
+.logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Optional: Füge Padding hinzu, um den Inhalt zu zentrieren */
 }
 
-.logo img {
-    height: 100%; /* Das Logo wird die volle Höhe des Headers haben */
+.title {
+    font-family: 'Arial Black';
+    display: inline-flex;
+    align-items: center;
+}
+.subtitle {
+    font-family: 'Arial Black';
+}
+.note {
+    text-align: right;
 }
 
-.links {
-    display: flex;
+.noten  {
+    border-collapse:collapse;
+    border-spacing:0;
+
+}
+.noten td{
+    padding:10px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+}
+.noten th{
+    padding:10px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
 }
 
-.link-container {
-    margin-left: 15px; /* Optional: Füge Abstand zwischen den Links hinzu */
-}
-
-.links a {
-    color: #fff; /* Farbe für die Links */
-    text-decoration: none; /* Entfernt die Standard-Unterstreichung der Links */
+.table-bold {
+    font-weight: bold;
 }
