@@ -1,9 +1,9 @@
--- Datenbank erstellen
+-- Datenbank wurde erstellt
 CREATE DATABASE IF NOT EXISTS schulzeugnis;
 
 USE schulzeugnis;
 
--- Tabelle für Schüler erstellen
+-- Tabelle mit Vor und Nachnamen. Sie sind gleich der Klasse zugeordnet
 CREATE TABLE IF NOT EXISTS schueler (
                                         schueler_id INT AUTO_INCREMENT PRIMARY KEY,
                                         vorname VARCHAR(50) NOT NULL,
@@ -121,3 +121,117 @@ WHERE
         n.fach = 'Sport';
 
 select * from noten
+
+
+
+
+DROP TABLE IF EXISTS noten;
+
+-- Tabelle für Abu-Noten erstellen
+CREATE TABLE IF NOT EXISTS abu_noten (
+                                         abu_note_id INT AUTO_INCREMENT PRIMARY KEY,
+                                         schueler_id INT,
+                                         note DECIMAL(2, 1) NOT NULL,
+                                         erstellungsdatum DATE NOT NULL,
+                                         letzte_aktualisierung DATE NOT NULL,
+                                         FOREIGN KEY (schueler_id) REFERENCES schueler(schueler_id)
+);
+
+-- Noten für Abu für die ersten 10 Schüler eintragen
+INSERT INTO abu_noten (schueler_id, note, erstellungsdatum, letzte_aktualisierung)
+VALUES
+    (1, 4.5, '2023-01-01', '2023-01-01'),
+    (2, 5.2, '2023-01-02', '2023-01-02'),
+    (3, 4.8, '2023-01-03', '2023-01-03'),
+    (4, 5.5, '2023-01-04', '2023-01-04'),
+    (5, 5.0, '2023-01-05', '2023-01-05'),
+    (6, 4.3, '2023-01-06', '2023-01-06'),
+    (7, 5.8, '2023-01-07', '2023-01-07'),
+    (8, 4.7, '2023-01-08', '2023-01-08'),
+    (9, 5.3, '2023-01-09', '2023-01-09'),
+    (10, 4.9, '2023-01-10', '2023-01-10');
+
+select * from abu_noten
+
+-- Tabelle für Sport-Noten erstellen
+CREATE TABLE IF NOT EXISTS sport_noten (
+                                           sport_note_id INT AUTO_INCREMENT PRIMARY KEY,
+                                           schueler_id INT,
+                                           note DECIMAL(2, 1) NOT NULL,
+                                           erstellungsdatum DATE NOT NULL,
+                                           letzte_aktualisierung DATE NOT NULL,
+                                           FOREIGN KEY (schueler_id) REFERENCES schueler(schueler_id)
+);
+
+-- Noten für Sport für die ersten 10 Schüler eintragen
+INSERT INTO sport_noten (schueler_id, note, erstellungsdatum, letzte_aktualisierung)
+VALUES
+    (1, 5.7, '2023-01-01', '2023-01-01'),
+    (2, 4.5, '2023-01-02', '2023-01-02'),
+    (3, 5.0, '2023-01-03', '2023-01-03'),
+    (4, 6.0, '2023-01-04', '2023-01-04'),
+    (5, 4.8, '2023-01-05', '2023-01-05'),
+    (6, 5.2, '2023-01-06', '2023-01-06'),
+    (7, 4.6, '2023-01-07', '2023-01-07'),
+    (8, 5.5, '2023-01-08', '2023-01-08'),
+    (9, 4.9, '2023-01-09', '2023-01-09'),
+    (10, 5.3, '2023-01-10', '2023-01-10');
+
+select * from sport_noten
+
+-- Tabelle für Marketingfachsprache-Noten erstellen
+CREATE TABLE IF NOT EXISTS marketingfachsprache_noten (
+                                                          marketingfachsprache_note_id INT AUTO_INCREMENT PRIMARY KEY,
+                                                          schueler_id INT,
+                                                          note DECIMAL(2, 1) NOT NULL,
+                                                          erstellungsdatum DATE NOT NULL,
+                                                          letzte_aktualisierung DATE NOT NULL,
+                                                          FOREIGN KEY (schueler_id) REFERENCES schueler(schueler_id)
+);
+
+-- Noten für Marketingfachsprache für die ersten 10 Schüler eintragen
+INSERT INTO marketingfachsprache_noten (schueler_id, note, erstellungsdatum, letzte_aktualisierung)
+VALUES
+    (1, 4.2, '2023-01-01', '2023-01-01'),
+    (2, 5.5, '2023-01-02', '2023-01-02'),
+    (3, 4.8, '2023-01-03', '2023-01-03'),
+    (4, 5.9, '2023-01-04', '2023-01-04'),
+    (5, 4.5, '2023-01-05', '2023-01-05'),
+    (6, 5.3, '2023-01-06', '2023-01-06'),
+    (7, 4.7, '2023-01-07', '2023-01-07'),
+    (8, 5.0, '2023-01-08', '2023-01-08'),
+    (9, 4.6, '2023-01-09', '2023-01-09'),
+    (10, 5.2, '2023-01-10', '2023-01-10');
+
+select * from marketingfachsprache_noten
+
+
+-- Tabelle für Englisch-Noten erstellen
+CREATE TABLE IF NOT EXISTS englisch_noten (
+                                              englisch_note_id INT AUTO_INCREMENT PRIMARY KEY,
+                                              schueler_id INT,
+                                              note DECIMAL(2, 1) NOT NULL,
+                                              erstellungsdatum DATE NOT NULL,
+                                              letzte_aktualisierung DATE NOT NULL,
+                                              FOREIGN KEY (schueler_id) REFERENCES schueler(schueler_id)
+);
+
+-- Noten für Englisch für die ersten 10 Schüler eintragen
+INSERT INTO englisch_noten (schueler_id, note, erstellungsdatum, letzte_aktualisierung)
+VALUES
+    (1, 5.4, '2023-01-01', '2023-01-01'),
+    (2, 4.7, '2023-01-02', '2023-01-02'),
+    (3, 5.1, '2023-01-03', '2023-01-03'),
+    (4, 4.9, '2023-01-04', '2023-01-04'),
+    (5, 5.8, '2023-01-05', '2023-01-05'),
+    (6, 4.5, '2023-01-06', '2023-01-06'),
+    (7, 5.0, '2023-01-07', '2023-01-07'),
+    (8, 4.3, '2023-01-08', '2023-01-08'),
+    (9, 5.7, '2023-01-09', '2023-01-09'),
+    (10, 4.6, '2023-01-10', '2023-01-10');
+
+select * from englisch_noten
+
+select * from schueler
+
+select * from marketingfachsprache_noten
