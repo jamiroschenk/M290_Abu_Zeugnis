@@ -1,30 +1,238 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Deine Website</title>
+    <title>Title</title>
 </head>
 <body>
-
-<header>
-    <div class="logo">
-        <a href="dein-link-hier">
-            <img src="dein-bildpfad-hier" alt="Logo">
-        </a>
-    </div>
-    <div class="links">
-        <div class="link-container">
-            <a href="zeugnisse.html">Zeugnisse</a>
-        </div>
-        <div class="link-container">
-            <a href="kontakt.html">Kontakt</a>
-        </div>
-    </div>
+<header class="logo"></header>
+<img src="https://steigerlegal.ch/wp-content/uploads/2019/09/kanton-zuerich_logo_002.jpg" width="250">
+<h1 class="title">Bildungszentrum Zürichsee</h1>
 </header>
 
-<!-- Der Rest deiner Webseite kommt hier -->
+<div class="personals">
+    <div class="name">
+        <table>
+            <tr>
+                <td id="salutation">Herr</td>
+            </tr>
+            <tr>
+                <td id="name">David Krügel</td>
+            </tr>
+            <tr>
+                <td id="address">Strasse 1</td>
+            </tr>
+            <tr>
+                <td id="zip">8484 Agasul</td>
+            </tr>
+        </table>
+    </div>
+    <div class="other">
+        <table>
+            <tr>
+                <td>Geburtsdatum</td>
+                <td id="birth">01.01.2006</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Beruf</td>
+                <td id="profession">Mediamatiker EFZ</td>
+            </tr>
+            <br>
+            <tr>
+                <td>Lehrbetrieb</td>
+                <td id="employer">UBS AG</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="place">Zürich</td>
+            </tr>
+            <tr>
+                <td>Klasse</td>
+                <td id="class">BM21 c</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bildungszentrum Zürichsee</td>
+            </tr>
+            <tr>
+                <td>Wirtschaft</td>
+            </tr>
+            <tr>
+                <td>Horgen/Stäfa, <span id="datetime"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="zeugnis">
+    <h2 class="subtitle">Semesterzeugnis</h2>
+    <p>Berufsmaturität Ausrichtung Wirtschaft und Dienstleistungen, Typ Wirtschaft<br>
+        Bildungsgang während der beruflichen Grundbildung</p>
+    <table class="noten">
+        <tr>
+            <th class="table-bold"></th>
+            <th class="table-bold"></th>
+            <th class="table-bold">HE/21</th>
+            <th class="table-bold">FR/22</th>
+            <th class="table-bold">HE/22</th>
+            <th class="table-bold">FR/23</th>
+            <th class="table-bold">HE/23</th>
+            <th class="table-bold">FR/24</th>
+            <th class="table-bold">HE/24</th>
+            <th class="table-bold">FR/25</th>
+        </tr>
+        <tr>
+            <td class="area table-bold">Grundlagenbereich</td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Deutsch</td>
+            <td class="note">5</td>
+            <td class="note">6</td>
+            <td class="note">7</td>
+            <td class="note">8</td>
+            <td class="note">9</td>
+            <td class="note">10</td>
+            <td class="note">11</td>
+            <td class="note">12</td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Französisch</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Englisch</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Mathematik</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="area table-bold">Schwerpunktbereich</td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Wirtschaft und Recht</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="note">Finanz- und Rechnungswesen</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="area table-bold">Ergänzungsbereich</td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Geschichte und Politik</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="note"></td>
+            <td class="subject">Technik und Umwelt</td>
+            <td class="note">5</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+        <tr>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold">5.0</td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+            <td class="note table-bold"></td>
+        </tr>
+        <tr>
+            <td class="area table-bold">Promotion</td>
+            <td class="note"></td>
+            <td class="note">prom.</td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+            <td class="note"></td>
+        </tr>
+    </table>
+</div>
+<script>
+    // Get current date and time
+    var now = new Date();
 
+    // Options for formatting the date
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+
+    // Format the date according to the options
+    var formattedDate = now.toLocaleString('de-DE', options);
+
+    // Insert formatted date into HTML
+    document.getElementById("datetime").innerHTML = formattedDate;
+</script>
 </body>
 </html>
