@@ -271,3 +271,5 @@ FROM
 WHERE
         s.klasse = 'ME22A';
 
+select * from sport_noten
+
