@@ -273,3 +273,138 @@ WHERE
 
 select * from sport_noten
 
+select * from schueler
+
+
+
+
+
+
+
+
+
+
+
+
+-- Demonstration für die Präsentation
+
+-- Komplexer Select auf die Datenbank
+-- Hier zeigen wir einen Select unter Miteinbezug von je einer Basistabelle
+
+select * from schueler
+
+-- 2 Pkt: Anwendung von mindestens  joins (Verbindung zwischen den Tabellen mittels PK Und FK.
+-- Mit Left Join kombinieren wir die Daten aus mehreren Tabellen in einer
+SELECT
+    s.vorname,
+    s.nachname,
+    a.note AS abu_note,
+    sp.note AS sport_note,
+    m.note AS marketingfachsprache_note,
+    e.note AS englisch_note
+FROM
+    schueler s
+        LEFT JOIN
+    abu_noten a ON s.schueler_id = a.schueler_id
+        LEFT JOIN
+    sport_noten sp ON s.schueler_id = sp.schueler_id
+        LEFT JOIN
+    marketingfachsprache_noten m ON s.schueler_id = m.schueler_id
+        LEFT JOIN
+    englisch_noten e ON s.schueler_id = e.schueler_id
+WHERE
+        s.klasse = 'ME22B';
+
+-- 1 Pkt: Demonstration der auf- und absteigende Sortierung
+-- Aufsteigende Sortierung nach Nachnamen (ACS = Aufstieg) (DESC = Absteigend)
+SELECT * FROM schueler
+ORDER BY nachname ASC;
+
+
+-- CRUD-Operationen auf der Datenbank: INSERT
+-- 1 Pkt: Kann einen Insert auf eine Basistabelle ausführen.
+-- Mit Insert können wir neue Daten in eine Tabelle einfügen
+INSERT INTO schueler (vorname, nachname, klasse)
+VALUES ('Lenny', 'Werrn', 'ME22A');
+
+select * from schueler
+
+-- 1 Pkt: Kann mit einem Insert mehrere Daten in die Basistabellen einfügen.
+-- Mehrere neue Schüler werden eingefügt
+INSERT INTO schueler (vorname, nachname, klasse)
+VALUES
+    ('Maria', 'Fischer', 'ME22A'),
+    ('Benjamin', 'Blümchen', 'ME22A'),
+    ('Dagobert', 'Duck', 'ME22B'),
+    ('Thierry', 'Biland', 'ME22B');
+
+select * from schueler
+
+
+-- CRUD-Operationen auf der Datenbank: SELECT
+-- 1 Pkt: Kann Select auf Basidaten ausführen
+
+SELECT vorname, nachname, klasse
+FROM schueler;
+
+-- 3 Pkt: Kann Select auf Relationentabellen machen und die Attribute der Fremdtabelle anzeigen lassen.
+-- Hier wollen wir alle Abu Noten anzeigen (funktioniert noch nicht)
+-- s. steht für Schüler - es ist eine abkürzung
+
+SELECT
+    s.vorname,
+    s.nachname,
+    s.klasse,
+    a.note AS abu_note
+FROM
+    schueler s
+        JOIN
+    abu_noten a ON s.schueler_id = a.schueler_id
+WHERE
+        s.klasse = 'ME22A';
+
+select * from schueler
+
+-- CRUD-Operationen auf der Datenbank: UPDATE
+-- 1 Pkt: Kann Update auf eine Basistabelle ausführen
+
+-- Wir wechseln den Schüler mit der Schüler ID 1 in eine andere Klasse
+-- Hier ändern wir die Basis Tabelle
+UPDATE schueler
+SET klasse = 'ME22A'
+WHERE schueler_id = 1;
+
+select * from schueler
+
+-- 1 Pkt: Kann beim Update geziehlt einen Datensatz aktualisieren
+-- Hier ändern wir jetzt die Sport Note aus einer Untertabelle
+
+-- Update, um gezielt die Sportnote für einen Schüler zu aktualisieren
+UPDATE sport_noten
+SET note = 6
+WHERE schueler_id = 1;
+
+select * from sport_noten
+
+
+-- CRUD-Operationen auf der Datenbank: DELETE
+-- 1 Pkt: Kann einen DELETE auf eine Basistabelle ausführen.
+
+-- hier löschen wir einen Schüler aus einer Basistabelle
+DELETE FROM schueler
+WHERE schueler_id = 19;
+
+select * from schueler
+
+-- 1 Pkt: Kann einen geziehlten DELETE (auf einen oder weniger Sätze beschränkt) ausführen.
+
+INSERT INTO schueler (vorname, nachname, klasse)
+VALUES
+    ('Thierry', 'Biland', 'ME22B');
+
+select * from schueler
+
+DELETE FROM sport_noten
+WHERE schueler_id = 9;
+
+select * from sport_noten

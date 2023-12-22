@@ -189,16 +189,16 @@
     <br>
 </div>
 <script>
-    // Get current date and time
+    // mit diesem Code können wir das Datum laufend aktualisieren
     var now = new Date();
 
-    // Options for formatting the date
+    // hier können wir das Datum vormatieren
     var options = { day: 'numeric', month: 'long', year: 'numeric' };
 
-    // Format the date according to the options
+
     var formattedDate = now.toLocaleString('de-DE', options);
 
-    // Insert formatted date into HTML
+    // Wird für den HTML Code vormatiert
     document.getElementById("datetime").innerHTML = formattedDate;
 </script>
 </body>
