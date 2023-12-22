@@ -390,7 +390,7 @@ select * from sport_noten
 -- CRUD-Operationen auf der Datenbank: DELETE
 -- 1 Pkt: Kann einen DELETE auf eine Basistabelle ausführen.
 
--- hier löschen wir einen Schüler aus einer Basistabelle
+-- hier löschen wir die Entität aus einer Basistabelle (Entität=Schüler)
 DELETE FROM schueler
 WHERE schueler_id = 19;
 
