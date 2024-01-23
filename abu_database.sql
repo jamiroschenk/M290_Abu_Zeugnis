@@ -291,7 +291,7 @@ select * from schueler
 -- Komplexer Select auf die Datenbank
 -- Hier zeigen wir einen Select unter Miteinbezug von je einer Basistabelle
 
-select * from schueler
+select * from schueler;
 
 -- 2 Pkt: Anwendung von mindestens  joins (Verbindung zwischen den Tabellen mittels PK Und FK.
 -- Mit Left Join kombinieren wir die Daten aus mehreren Tabellen in einer
@@ -371,7 +371,7 @@ select * from schueler
 -- Wir wechseln den Schüler mit der Schüler ID 1 in eine andere Klasse
 -- Hier ändern wir die Basis Tabelle
 UPDATE schueler
-SET klasse = 'ME22A'
+SET klasse = 'ME22B'
 WHERE schueler_id = 1;
 
 select * from schueler
@@ -392,7 +392,7 @@ select * from sport_noten
 
 -- hier löschen wir die Entität aus einer Basistabelle (Entität=Schüler)
 DELETE FROM schueler
-WHERE schueler_id = 19;
+WHERE schueler_id = 20;
 
 select * from schueler
 

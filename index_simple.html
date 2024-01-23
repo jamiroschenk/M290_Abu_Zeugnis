@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+<header class="logo"></header>
+<img src="https://steigerlegal.ch/wp-content/uploads/2019/09/kanton-zuerich_logo_002.jpg" width="150">
+<a href="ME21a">ME21a</a>
+<a href="ME21b">ME21b</a>
+<center><h1 class="title">Bildungszentrum Zürichsee</h1></center>
+</header>
+
+<div class="personals">
+    <div class="name">
+        <table>
+            <tr>
+                <td id="salutation">Herr</td>
+            </tr>
+            <tr>
+                <td id="name">Max Mustermann</td>
+            </tr>
+            <tr>
+                <td id="address">Münsterstrasse 3</td>
+            </tr>
+            <tr>
+                <td id="zip">8001 Zürich</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<h1>Data from MySQL Table</h1>
+
+<div id="data-container">
+    <!-- The fetched data will be displayed here -->
+</div>
+
+
+<script>
+    // Function to make a GET request to your Node.js backend
+    function fetchData() {
+        fetch('http://localhost:3000/schueler/16')
+            .then(response => response.json())
+            .then(data => {
+                // Handle the fetched data, you can update this part based on your needs
+                const dataContainer = document.getElementById('data-container');
+                const table = document.createElement('table');
+                const headers = Object.keys(data[0]);
+
+                // Create table header
+                const headerRow = table.insertRow(0);
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+
+                // Create table rows
+                data.forEach(rowData => {
+                    const row = table.insertRow();
+                    headers.forEach(header => {
+                        const cell = row.insertCell();
+                        cell.textContent = rowData[header];
+                    });
+                });
+
+                // Append the table to the dataContainer
+                dataContainer.appendChild(table);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Call the fetchData function when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchData();
+    });
+</script>
+
+</body>
+</html>
