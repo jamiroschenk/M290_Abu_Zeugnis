@@ -408,4 +408,3 @@ DELETE FROM sport_noten
 WHERE schueler_id = 9;
 
 select * from sport_noten
- 
