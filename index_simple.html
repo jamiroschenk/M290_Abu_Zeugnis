@@ -6,21 +6,25 @@
 </head>
 <body>
 <header class="logo">
+    <!-- Logo des Bildungszentrums -->
     <img src="https://steigerlegal.ch/wp-content/uploads/2019/09/kanton-zuerich_logo_002.jpg" width="150">
+    <!-- Überschrift des Bildungszentrums -->
     <center><h1 class="title">Bildungszentrum Zürichsee</h1></center>
 </header>
 
 <h1>Data from MySQL Table</h1>
 
 <div id="data-container">
-    <!-- The fetched data will be displayed here -->
+    <!-- Hier werden die abgerufenen Daten angezeigt -->
     <p>Vorname: <span id="vorname"></span></p>
     <p>Nachname: <span id="nachname"></span></p>
     <p>Klasse: <span id="klasse"></span></p>
+    <!-- Button zum Löschen eines Schülers -->
     <button onclick="deleteSchueler()">Schüler löschen</button>
 </div>
 
 <script>
+    // Funktion zum Löschen eines Schülers
     function deleteSchueler() {
         const urlParams = new URLSearchParams(window.location.search);
         const schuelerId = urlParams.get('schueler');
@@ -29,22 +33,23 @@
             return;
         }
 
+        // Fetch-Anfrage zum Löschen eines Schülers an den Server
         fetch(`http://localhost:3000/schueler/${schuelerId}`, {
             method: 'DELETE'
         })
             .then(response => {
                 if (response.ok) {
                     console.log('Schueler deleted successfully');
-                    // Optionally, redirect to another page or update UI as needed
+                    // Optional: Weiterleitung zu einer anderen Seite oder Aktualisierung der UI
                 } else {
                     console.error('Error deleting schueler');
-                    // Handle error response
+                    // Fehlerbehandlung für fehlerhafte Antworten
                 }
             })
             .catch(error => console.error('Error deleting schueler:', error));
     }
 
-    // Function to fetch and display schueler data
+    // Funktion zum Abrufen und Anzeigen von Schülerdaten anhand der ID
     function fetchDataById(id) {
         fetch(`http://localhost:3000/schueler/${id}`)
             .then(response => response.json())
@@ -57,15 +62,17 @@
             .catch(error => console.error('Error fetching data:', error));
     }
 
+    // Event-Listener, der auf das Laden des DOM wartet
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const schuelerId = urlParams.get('schueler');
 
         if (schuelerId) {
+            // Wenn eine Schüler-ID vorhanden ist, werden die Daten für diesen Schüler abgerufen und angezeigt
             fetchDataById(schuelerId);
         } else {
-            // Default behavior if no schueler ID is provided
-            fetchDataById(1); // Assuming default schueler ID
+            // Standardverhalten, wenn keine Schüler-ID bereitgestellt wird
+            fetchDataById(1); // Annahme einer Standard-Schüler-ID
         }
     });
 </script>
