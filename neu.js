@@ -1,8 +1,8 @@
 /* *******************************************************************************************
-* Autor: Lenny Werrn, Jamiro Schenk
+* Autor: V. Demir, 1/2024
 * *******************************************************************************************
 * Beschreibung:
-* Daten aus unserer Datenbank auf Postman anzeigen
+* Express-Server, um CRUD-Operationen vom Browser entgegen zunehmen an der DB durchzuführen
 * *******************************************************************************************
 * Hinweise
 * npm install node
@@ -20,7 +20,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const port = 3333;
+const port = 3000;
 
 app.use(cors());
 
@@ -71,4 +71,4 @@ app.delete('/schueler/:id', (req, res) => {
         }
 
     })
-});
+})
