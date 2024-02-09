@@ -78,7 +78,7 @@ app.delete('/schueler/:id', (req, res) => {
             console.log(err); // Ausgabe von Fehlern, falls welche auftreten
         }
     })
-}); 
+});
 
 
 
